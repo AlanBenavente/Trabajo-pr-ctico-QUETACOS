@@ -1,0 +1,229 @@
+<nav class="navbar navbar-expand-lg navbar bg-dark fixed-top" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#home">QUE TACOS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="snav-item">
+                    <a class="nav-link active" aria-current="page" href="#productos">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#nosotros">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#conocenos">Sucursal</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div id="home" class="row align-items-center hero">
+        <div class="col-lg-3 offset-lg-2">
+            <h1>¡QUE TACOS!</h1>
+            <h2>¡El sabor casero de la comida mexicana más cerca que nunca!</h2>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="row my-3"> <!--Abre productos-->
+    <div id="productos" class="col-md-5 offset-md-2 scroll_section">
+        <h2>Productos</h2>
+        <ul class="lista-productos">
+            {{#each productos}}
+            <li><a href="#" data-bs-toggle="modal" data-bs-target="#modal{{id}}"><img src="{{imagen}}"> {{titulo}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    </div> <!--cierra productos-->
+
+
+    <div class="col-md-3 my-3"> <!--abre testimonios-->
+        <div class="rounded py-5 testimonios">
+            <h2 class="text-center">Testimonios</h2>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        class="active" aria-current="true" aria-label="slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        class="active" aria-current="true" aria-label="slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonio">
+                            <h5>"Los mejores tacos del mundo!!</h5>
+                            <p>Ricardo, Devoto</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonio">
+                            <h5>"Precios increíbles!</h5>
+                            <p>Martín, Villa del Parque</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonio">
+                            <h5>"Todo muy rico!!</h5>
+                            <p>Julieta, Saavedra</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div> <!--cierre de novedades y testimonios-->
+    </div> <!--Cierra lo de testimonios-->
+
+
+    <!-- Inicio del Modal -->
+    {{#each productos}}
+    <div class="modal fade" id="modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="exampleModalLabel">{{titulo}}</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="{{imagen}}" style="max-width:100%;width:auto;height:auto;">
+                    <h3>{{subtitulo}}</h3>
+                    <p>{{cuerpo}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    <!-- Fin del Modal-->
+    <!-- fin de novedades -->
+    <!--Inicio Historia-->
+
+    <div id="historia" class="row align align-items-center py-4 scroll_section">
+        <div class="col-lg-2 col-md-3 offset-lg-2 d-none d-sm-block">
+            <img src="images/historia tacos 2.jpg" alt="historia 2" class="img-fluid">
+        </div>
+        <div class="col-12 d-sm-none">
+            <img src="images/historia tacos 3.jpg" alt="historia 3" class="img-fluid">
+        </div>
+        <div class="col-lg-4 col-md-6 mt-4 mt-sm-0">
+            <h2>Historia</h2>
+            <p>Esta exitosa empresa alimenticia fue fundada por una gran familia, de las cuales sus recetas se trascendieron por generaciones.
+                Todos nuestros ingredientes son frescos y se preparan en el momento, en nuestro local a la vista de todos.
+                ¿Te vas a perder de esta rica experiencia?
+            </p>
+        </div>
+    </div><!--Cierra el div con id historia-->
+
+    <!--Seccion Nosotros-->
+    <div id="nosotros" class="row align-item-stretch my-3 staff py-4 scroll_section">
+        <div class="col-lg-8 offset-lg-2">
+            <h2>Nosotros</h2>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="col">
+                    <div class="card">
+                        <img src="../images/conócenos-ahora.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Redes sociales</h5>
+                            <p class="card-text">¡Buscanos en Facebook y en Instagram como @Quetacos ya que subimos fotos de nuestras preparaciones y promociones especiales!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="../images/conocenos 2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Ingrediente</h5>
+                            <p class="card-text">Nuestros ingredientes son seleccionados por expertos alimenticios. Siempre frescos y cumpliendo los estrictos regimenes de higiene</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="../images/conocenos 3jpg.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Trabajadores</h5>
+                            <p class="card-text">En ¡Que Tacos! todos trabajamos en equipo para que puedas disfrutar del mejor servicio SIEMPRE!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="../images/conocenos 4.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Dirección</h5>
+                            <p class="card-text">Nos encontramos en avenida Larrazábal 1100</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin de nosotros-->
+
+
+    <!--Visitanos-->
+    <div id="conocenos" class="row py-4">
+        <div class=" col-md-4 offset-md-2">
+            <h2>Visitanos</h2>
+            <div class="mapa">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.2063831753876!2d-58.50646808423564!3d-34.64949046742968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc9abc7dbf5c7%3A0xa7746d767ec4e914!2sAv.%20Larraz%C3%A1bal%201100%2C%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1679650094340!5m2!1ses-419!2sar"></iframe>
+            </div>
+        </div> <!--cierra div id visitanos-->
+
+        <div class="col-md-4 mt-4 mt-4 mt-sm-0">
+            <div id="contactanos" class="row py 4 scroll_section">
+                <h2>Contactanos</h2>
+                <form class="row g-3" action="/" method="post">
+                    <div class="col-md-6">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" placeholder="Apellido" name="apellido">
+                    </div>
+                    <div class="col-12">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="email@gmail.com" name="email">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="celular" class="form-label">Celular</label>
+                        <input type="text" class="form-control" id="celular" placeholder="Celular" name="celular">
+                    </div>
+                    <div class="col-12">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" cols="30" rows="10" name="mensaje"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" id="botonenviar" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
+                <p> {{message}}</p>
+
+            </div>
+        </div> <!--cierra div con id formulario-->
+    </div><!--cierra div con id conocenos-->
+
+    <footer>
+        <p class="text-center">Diseñado por: Alan Benavente</p>
+    </footer>
